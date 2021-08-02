@@ -37,10 +37,10 @@ public class ThreadBaseReactPackage implements ReactPackage {
                 new AndroidInfoModule(catalystApplicationContext),
                 new ExceptionsManagerModule(reactInstanceManager.getDevSupportManager()),
                 new AppStateModule(catalystApplicationContext),
-                new TimingModule(catalystApplicationContext, reactInstanceManager.getDevSupportManager()),
                 new UIManagerStubModule(catalystApplicationContext),
                 new SourceCodeModule(catalystApplicationContext),
                 new JSCHeapCapture(catalystApplicationContext),
+                new TimingModule(catalystApplicationContext, reactInstanceManager.getDevSupportManager()),
 
                 // Main list
                 new AsyncStorageModule(catalystApplicationContext),
