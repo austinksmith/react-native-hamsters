@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
 [![downloads](https://img.shields.io/npm/dm/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
 
-This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with Hamsters.js, allowing you to make full use of the Hamsters.js parallel computing library.
+This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with [Hamsters.js](https://hamsters.io), allowing you to make full use of the [Hamsters.js](https://hamsters.io) parallel computing library.
 
 ## Getting started
 
@@ -67,9 +67,7 @@ like this:
   	```
 
 #### Windows
-Windows support is not yet implemented, but PRs are welcome if you want to give it a shot!
-
-[Read it! :D](https://github.com/ReactWindows/react-native)
+Windows support is not yet implemented, [PRs are welcome if you want to give it a shot!(https://github.com/ReactWindows/react-native)
 
 1. In Visual Studio add the `RNThread.sln` in `node_modules/react-native-hamsters/windows/RNThread.sln` folder to their solution, reference from their app.
 2. Open up your `MainPage.cs` app
@@ -79,17 +77,17 @@ Windows support is not yet implemented, but PRs are welcome if you want to give 
 
 ## Usage
 
-To learn how to make use of the library with Hamsters.js head to the ReactNative section of the [Hamsters.js Wiki](https://hamsters.io/wiki/react-native) or check out the example Hamstersjs application in the examples directory! For use without Hamsters.js check out the project this was based on https://github.com/joltup/react-native-threads, this project may contain modifications or changed that are specific for use with Hamsters.js.
+To learn how to make use of the library with [Hamsters.js](https://hamsters.io) head to the ReactNative section of the [[Hamsters.js](https://hamsters.io) Wiki](https://hamsters.io/wiki/react-native) or check out the example Hamstersjs application in the examples directory! For use without [Hamsters.js](https://hamsters.io) check out the project this was based on https://github.com/joltup/react-native-threads, this project may contain modifications or changed that are specific for use with [Hamsters.js](https://hamsters.io).
 
-### Thread Lifecycle
+### Worker Thread Lifecycle
 
-- Threads are paused when the app enters in the background
-- Threads are resumed once the app is running in the foreground
-- During development, when you reload the main JS bundle (shake device -> `Reload`) the threads are killed
+- Worker Threads are paused when the app enters in the background
+- Worker Threads are resumed once the app is running in the foreground
+- During development, when you reload the main JS bundle (shake device -> `Reload`) the Worker Threads are killed
 
 ### Debugging
 
-Instantiating Threads creates multiple react native JS processes and can make debugging
+Instantiating Worker Threads creates multiple react native JS processes and can make debugging
 remotely behave unpredictably. It's recommended to use a third party debugging tool like
 [Reactotron](https://github.com/infinitered/reactotron) to aid with this. Each process,
 including your main application as well as your thread code can connect to Reactotron
@@ -133,8 +131,9 @@ For convenience I recommend adding these thread building commands as npm scripts
 to your project.
 
 ## Example App
+
 Included in this repository is a simple example application demonstrating basic
-usage of react-native-hamsters with Hamsters.js
+usage of react-native-hamsters with [[Hamsters.js](https://hamsters.io)
 
 ## Acknowledgements
 
@@ -144,4 +143,4 @@ This library exists thanks to the previous effforts by other developers.
 * https://github.com/fabriciovergal/react-native-workers
 * https://github.com/devfd/react-native-workers
 
-Neither of these were being maintained by their original owners and I wanted Hamsters.js to work properly in react-native again so here it is.
+Neither of these were being maintained by their original owners and I wanted [Hamsters.js](https://hamsters.io) to work properly in react-native again so here it is.

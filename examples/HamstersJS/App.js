@@ -56,7 +56,9 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
-  hamsters.init();
+  hamsters.init({
+    Worker: Worker
+  });
   console.log(hamsters);
   const isDarkMode = useColorScheme() === 'dark';
 
