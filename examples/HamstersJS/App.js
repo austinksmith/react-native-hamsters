@@ -26,8 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Thread } from 'react-native-threads';
-import { hamsters } from 'hamsters.js';
+import { Worker } from 'react-native-hamsters';
+const hamsters = require('hamsters.js');
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';

@@ -1,25 +1,17 @@
-# react-native-threads
+# react-native-hamsters
 
-[![npm version](https://img.shields.io/npm/v/react-native-threads.svg?style=flat-square)](https://www.npmjs.com/package/react-native-threads)
-[![downloads](https://img.shields.io/npm/dm/react-native-threads.svg?style=flat-square)](https://www.npmjs.com/package/react-native-threads)
+[![npm version](https://img.shields.io/npm/v/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
+[![downloads](https://img.shields.io/npm/dm/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
 
-Spawn new react native JavaScript processes for CPU intensive work outside of your
-main UI JavaScript process.
-
-Despite this package's name, this isn't real 'threading', but rather multi-processing.
-The main tradeoff of using this library is memory usage, as creating new JS processes
-can have significant overhead.  Be sure to benchmark your app's memory usage and other
-resources before using this library! Alternative solutions include using `runAfterInteractions`
-or the [Interaction Manager](https://facebook.github.io/react-native/docs/interactionmanager.html),
-and I recommend you investigate those thoroughly before using this library.
+This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with Hamsters.js, allowing you to make full use of the Hamsters.js parallel computing library.
 
 ## Getting started
 
-`$ npm install react-native-threads --save`
+`$ npm install react-native-hamsters --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-threads`
+`$ react-native link react-native-hamsters`
 
 ### Android
 
@@ -49,7 +41,7 @@ like this:
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-threads` and add `RNThread.xcodeproj`
+2. Go to `node_modules` ➜ `react-native-hamsters` and add `RNThread.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNThread.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
@@ -66,12 +58,12 @@ like this:
 
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-threads'
-  	project(':react-native-threads').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-threads/android')
+  	include ':react-native-hamsters'
+  	project(':react-native-hamsters').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-hamsters/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-threads')
+      compile project(':react-native-hamsters')
   	```
 
 #### Windows
@@ -79,7 +71,7 @@ Windows support is not yet implemented, but PRs are welcome if you want to give 
 
 [Read it! :D](https://github.com/ReactWindows/react-native)
 
-1. In Visual Studio add the `RNThread.sln` in `node_modules/react-native-threads/windows/RNThread.sln` folder to their solution, reference from their app.
+1. In Visual Studio add the `RNThread.sln` in `node_modules/react-native-hamsters/windows/RNThread.sln` folder to their solution, reference from their app.
 2. Open up your `MainPage.cs` app
   - Add `using Thread.RNThread;` to the usings at the top of the file
   - Add `new RNThreadPackage()` to the `List<IReactPackage>` returned by the `Packages` method
@@ -90,10 +82,10 @@ Windows support is not yet implemented, but PRs are welcome if you want to give 
 In your application code (react components, etc.):
 
 ```javascript
-import { Thread } from 'react-native-threads';
+import { Worker } from 'react-native-hamsters';
 
 // start a new react native JS process
-const thread = new Thread('path/to/thread.js');
+const thread = new Worker('path/to/thread.js');
 
 // send a message, strings only
 thread.postMessage('hello');
@@ -107,18 +99,18 @@ thread.terminate();
 
 In your thread code (dedicated file such as `thread.js`):
 ```javascript
-import { self } from 'react-native-threads';
+import { self } from 'react-native-hamsters';
 
 // listen for messages
 self.onmessage = (message) => {
+
 }
 
 // send a message, strings only
 self.postMessage('hello');
 ```
 
-Check out the examples directory in this repo for demos of using `react-native-threads`
-in a functioning app!
+Check out the example Hamsters.js application in the examples directory!
 
 ### Thread Lifecycle
 
@@ -129,7 +121,7 @@ in a functioning app!
 ### Debugging
 
 Instantiating Threads creates multiple react native JS processes and can make debugging
-remotely behave unpredictably. I recommend using a third party debugging tool like
+remotely behave unpredictably. It's recommended to use a third party debugging tool like
 [Reactotron](https://github.com/infinitered/reactotron) to aid with this. Each process,
 including your main application as well as your thread code can connect to Reactotron
 and log debugging messages.
@@ -173,21 +165,14 @@ to your project.
 
 ## Example App
 Included in this repository is a simple example application demonstrating basic
-usage of react-native-threads. Look at `examples/SimpleExample/README.md` for
-instructions on running it.  Here's how the app looks with the Reactotron debugger:
-
-![SimpleExample Screen Capture](https://raw.githubusercontent.com/traviskn/react-native-threads/master/media/simplethreadexample.gif)
+usage of react-native-hamsters with Hamsters.js
 
 ## Acknowledgements
 
-This library was heavily inspired by two other packages both under the name of
-`react-native-workers`.
+This library exists thanks to the previous effforts by other developers.
 
-The first was https://github.com/fabriciovergal/react-native-workers ,
-and the second was https://github.com/devfd/react-native-workers
+* https://github.com/joltup/react-native-threads
+* https://github.com/fabriciovergal/react-native-workers
+* https://github.com/devfd/react-native-workers
 
-I ended up going with devfd's implementation strategy as it seemed more flexible
-and feature-rich to me.  At the time of this writing neither library was functioning
-on the latest version of react native, and neither seemed to be very actively maintained.
-
-This library would not exist without those two reference implementations to guide me!
+Neither of these were being maintained by their original owners and I wanted Hamsters.js to work properly in react-native again so here it is.
