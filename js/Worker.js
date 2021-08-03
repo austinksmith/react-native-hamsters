@@ -5,7 +5,7 @@ import {
 
 const { ThreadManager } = NativeModules;
 
-export default class Thread {
+export default class Worker {
   constructor(jsPath) {
     if (!jsPath || !jsPath.endsWith('.js')) {
       throw new Error('Invalid path for thread. Only js files are supported');
@@ -13,7 +13,7 @@ export default class Thread {
 
     this.id = ThreadManager.startThread(jsPath.replace(".js", ""))
       .then(id => {
-        DeviceEventEmitter.addListener(`Thread${id}`, (message) => {
+        DeviceEventEmitter.addListener(`Worker${id}`, (message) => {
           !!message && this.onmessage && this.onmessage(message);
         });
         return id;

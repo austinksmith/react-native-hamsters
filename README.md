@@ -79,38 +79,7 @@ Windows support is not yet implemented, but PRs are welcome if you want to give 
 
 ## Usage
 
-In your application code (react components, etc.):
-
-```javascript
-import { Worker } from 'react-native-hamsters';
-
-// start a new react native JS process
-const thread = new Worker('path/to/thread.js');
-
-// send a message, strings only
-thread.postMessage('hello');
-
-// listen for messages
-thread.onmessage = (message) => console.log(message);
-
-// stop the JS process
-thread.terminate();
-```
-
-In your thread code (dedicated file such as `thread.js`):
-```javascript
-import { self } from 'react-native-hamsters';
-
-// listen for messages
-self.onmessage = (message) => {
-
-}
-
-// send a message, strings only
-self.postMessage('hello');
-```
-
-Check out the example Hamsters.js application in the examples directory!
+To learn how to make use of the library with Hamsters.js head to the ReactNative section of the [Hamsters.js Wiki](https://hamsters.io/wiki/react-native) or check out the example Hamstersjs application in the examples directory! For use without Hamsters.js check out the project this was based on https://github.com/joltup/react-native-threads, this project may contain modifications or changed that are specific for use with Hamsters.js.
 
 ### Thread Lifecycle
 
