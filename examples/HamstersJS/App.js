@@ -26,7 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Worker } from 'react-native-hamsters';
+import { Worker} from 'react-native-hamsters';
+
 const hamsters = require('hamsters.js');
 
 const Section = ({children, title}): Node => {
@@ -56,10 +57,12 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
+  console.log(Worker);
   hamsters.init({
-    Worker: Worker
+    Worker: Worker,
+    legacy: true
   });
-  console.log(hamsters);
+  console.log(hamsters.habitat);
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

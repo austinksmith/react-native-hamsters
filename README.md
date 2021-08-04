@@ -7,6 +7,7 @@ This project is based on the work of several previous projects, this is a stand 
 
 ## Getting started
 
+`$ npm install hamsters.js --save`
 `$ npm install react-native-hamsters --save`
 
 ### Mostly automatic installation
@@ -97,35 +98,32 @@ and log debugging messages.
 
 You will need to manually bundle your thread files for use in a production release
 of your app.  This documentation assumes you have a single thread file called
-`index.thread.js` in your project root.  If your file is named differently or in
+`reactNativeHamster.js` in your project root.  If your file is named differently or in
 a different location, you can update the documented commands accordingly.
 
 **Note**: If your single thread file is in a different location, the folder structure needs to 
 be replicated under `./ios` and `./android/app/src/main/assets/threads`.
 
 ```
-./App/Workers/worker.thread.js => ./ios/App/Workers/worker.thread.jsbundle
-./App/Workers/worker.thread.js => ./android/app/src/main/assets/threads/App/Workers/worker.thread.jsbundle
+./App/Workers/reactNativeHamster.js => ./ios/App/Workers/reactNativeHamster.jsbundle
+./App/Workers/reactNativeHamster.js => ./android/app/src/main/assets/threads/App/Workers/reactNativeHamster.jsbundle
 ```
 
 For iOS you can use the following command:
 
-`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file index.thread.js --platform ios --bundle-output ./ios/index.thread.jsbundle`
+`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform ios --bundle-output ./ios/reactNativeHamster.jsbundle`
 
 Once you have generated the bundle file in your ios folder, you will also need to add
 the bundle file to you project in Xcode. In Xcode's file explorer you should see
 a folder with the same name as your app, containing a `main.jsbundle` file as well
 as an `appDelegate.m` file. Right click on that folder and select the 'Add Files to <Your App Name>'
-option, which will open up finder and allow you to select your `ios/index.thread.jsbundle`
+option, which will open up finder and allow you to select your `ios/reactNativeHamster.jsbundle`
 file. You will only need to do this once, and the file will be included in all future
 builds.
 
-For Android create this direactory
-`mkdir ./android/app/src/main/assets/threads`
-
 And then you can use the following command:
 
-`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./android/app/src/main/res/ --entry-file index.thread.js --platform android --bundle-output ./android/app/src/main/assets/threads/index.thread.bundle`
+`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./android/app/src/main/res/ --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform android --bundle-output ./android/app/src/main/res/reactNativeHamster.jsbundle`
 
 For convenience I recommend adding these thread building commands as npm scripts
 to your project.
