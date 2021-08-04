@@ -63,6 +63,18 @@ const App: () => Node = () => {
     legacy: true
   });
   console.log(hamsters.habitat);
+                  var params = {
+                    array:[0,1,2,3,4,5,6,7,8,9],
+                    threads: 1
+                  };
+                  hamsters.run(params, function() {
+                    var arr = params.array;
+                    arr.forEach(function(item) {
+                     rtn.data.push((item * 120)/10);
+                    });
+                  }, function(results) {
+                    console.log(results);
+                  });
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
