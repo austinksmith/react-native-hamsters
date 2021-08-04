@@ -16,8 +16,6 @@ import { self } from 'react-native-hamsters';
     self.rtn = {};
 
     self.onmessage = (message) => {
-            console.log("WE HAVE A MESSAGE!!! ");
-
       params = JSON.parse(incomingMessage.data);
       rtn = {
         data: [],
