@@ -17,7 +17,7 @@ This project is based on the work of several previous projects, this is a stand 
 ### Android
 
 For android you will need to make a slight modification to your `MainApplication.java`
-file.  In the `getPackages` method pass in `mReactNativeHost` to the `react-native-hamstersPackage`
+file.  In the `getPackages` method pass in `mReactNativeHost` to the `reactNativeHamstersPackage`
 constructor:
 
 ```java
@@ -25,16 +25,16 @@ constructor:
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-        new react-native-hamstersPackage(mReactNativeHost)  // <-- Here
+        new reactNativeHamstersPackage(mReactNativeHost)  // <-- Here
       );
     }
 ```
 
 Also note that only the official react native modules are available from your
 threads (vibration, fetch, etc...). To include additional native modules in your
-threads, pass them into the `react-native-hamstersPackage` constructor after the `mReactNativeHost`
+threads, pass them into the `reactNativeHamstersPackage` constructor after the `mReactNativeHost`
 like this:
-`new react-native-hamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
+`new reactNativeHamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
 
 ### Manual installation
 
@@ -49,13 +49,13 @@ like this:
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.reactlibrary.react-native-hamstersPackage;` to the imports at the top of the file
-  - Add `new react-native-hamstersPackage(mReactNativeHost)` to the list returned by the `getPackages()` method
+  - Add `import com.reactlibrary.reactNativeHamstersPackage;` to the imports at the top of the file
+  - Add `new reactNativeHamstersPackage(mReactNativeHost)` to the list returned by the `getPackages()` method
   - Also note that only the official react native modules are available from your
     threads (vibration, fetch, etc...). To include additional native modules in your
-    threads, pass them into the `react-native-hamstersPackage` constructor after the `mReactNativeHost`
+    threads, pass them into the `reactNativeHamstersPackage` constructor after the `mReactNativeHost`
     like this:
-    `new react-native-hamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
+    `new reactNativeHamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
 
 2. Append the following lines to `android/settings.gradle`:
   	```
@@ -72,8 +72,8 @@ Windows support is not yet implemented, [PRs are welcome if you want to give it 
 
 1. In Visual Studio add the `react-native-hamsters.sln` in `node_modules/react-native-hamsters/windows/react-native-hamsters.sln` folder to their solution, reference from their app.
 2. Open up your `MainPage.cs` app
-  - Add `using Thread.react-native-hamsters;` to the usings at the top of the file
-  - Add `new react-native-hamstersPackage()` to the `List<IReactPackage>` returned by the `Packages` method
+  - Add `using ThreadreactNativeHamsters;` to the usings at the top of the file
+  - Add `new reactNativeHamstersPackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
 ## Usage
@@ -98,29 +98,29 @@ and log debugging messages.
 
 You will need to manually bundle your thread files for use in a production release
 of your app.  This documentation assumes you have a single thread file called
-`react-native-hamsters.js` in your project root.  If your file is named differently or in
+`reactNativeHamster.js` in your project root.  If your file is named differently or in
 a different location, you can update the documented commands accordingly.
 
 **Note**: If your single thread file is in a different location, the folder structure needs to 
 be replicated under `./ios` and `./android/app/src/main/assets/threads`.
 
 ```
- ./node_modules/hamsters.js/build/common/react-native-hamsters.js => ./ios/App/react-native-hamsters.jsbundle
+ ./node_modules/hamsters.js/build/common/reactNativeHamster.js => ./ios/App/reactNativeHamster.bundle
 ```
 
 For iOS you can use the following command:
 
-`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file ./node_modules/hamsters.js/build/common/react-native-hamsters.js --platform ios --bundle-output ./ios/App/react-native-hamsters.jsbundle`
+`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform ios --bundle-output ./ios/App/reactNativeHamster.bundle`
 
 Once you have generated the bundle file in your ios folder, you will also need to add
 the bundle file to you project in Xcode. In Xcode's file explorer you should see
-a folder with the same name as your app, containing a `main.jsbundle` file as well
+a folder with the same name as your app, containing a `main.bundle` file as well
 as an `appDelegate.m` file. Right click on that folder and select the 'Add Files to <Your App Name>'
-option, which will open up finder and allow you to select your `ios/react-native-hamsters.jsbundle`
+option, which will open up finder and allow you to select your `ios/reactNativeHamster.bundle`
 file. You will only need to do this once, and the file will be included in all future
 builds.
 
-For Android first copy react-native-hamsters.js from Hamsters.js /build/common/react-native-hamsters.js into the react native project root.
+For Android first copy reactNativeHamster.js from Hamsters.js /build/common/reactNativeHamster.js into the react native project root.
 
 And then you can use the following command:
 
@@ -129,7 +129,7 @@ rm -rf /tmp/metro-*
 `
 
 
-`react-native bundle --platform android --dev false --entry-file react-native-hamsters.js --bundle-output android/app/src/main/assets/react-native-hamsters.bundle --assets-dest android/app/src/main/res`
+`react-native bundle --platform android --dev false --entry-file reactNativeHamster.js --bundle-output android/app/src/main/assets/reactNativeHamster.bundle --assets-dest android/app/src/main/res`
 
 For convenience I recommend adding these thread building commands as npm scripts
 to your project.

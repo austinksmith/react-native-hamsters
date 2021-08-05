@@ -10,12 +10,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class react-native-hamstersPackage implements ReactPackage {
+public class reactNativeHamstersPackage implements ReactPackage {
 
     private ReactNativeHost reactNativeHost;
     private ReactPackage additionalThreadPackages[];
 
-    public react-native-hamstersPackage(ReactNativeHost reactNativeHost, ReactPackage... additionalThreadPackages) {
+    public reactNativeHamstersPackage(ReactNativeHost reactNativeHost, ReactPackage... additionalThreadPackages) {
         this.reactNativeHost = reactNativeHost;
         this.additionalThreadPackages = additionalThreadPackages;
     }
@@ -28,7 +28,7 @@ public class react-native-hamstersPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-                new react-native-hamstersModule(reactContext, reactNativeHost, additionalThreadPackages)
+                new reactNativeHamstersModule(reactContext, reactNativeHost, additionalThreadPackages)
         );
     }
 }

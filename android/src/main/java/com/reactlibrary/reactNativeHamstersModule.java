@@ -29,7 +29,7 @@ import okio.Okio;
 import okio.Sink;
 
 
-public class react-native-hamstersModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
+public class reactNativeHamstersModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
 
   private String TAG = "ThreadManager";
   private HashMap<Integer, JSThread> threads;
@@ -40,7 +40,7 @@ public class react-native-hamstersModule extends ReactContextBaseJavaModule impl
 
   private ReactPackage additionalThreadPackages[];
 
-  public react-native-hamstersModule(final ReactApplicationContext reactContext, ReactNativeHost reactNativehost, ReactPackage additionalThreadPackages[]) {
+  public reactNativeHamstersModule(final ReactApplicationContext reactContext, ReactNativeHost reactNativehost, ReactPackage additionalThreadPackages[]) {
     super(reactContext);
     this.reactApplicationContext = reactContext;
     threads = new HashMap<>();
