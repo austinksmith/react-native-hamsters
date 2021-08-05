@@ -114,7 +114,6 @@ public class reactNativeHamstersModule extends ReactContextBaseJavaModule implem
     if (thread == null) {
       Log.d(TAG, "Cannot post message to thread - thread is null for id " + threadId);
       throw new RuntimeException("Cannot post message to thread - thread is null for id " + threadId);
-      return;
     }
 
     thread.postMessage(message);
