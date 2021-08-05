@@ -59,7 +59,7 @@ const Section = ({children, title}): Node => {
 const App: () => Node = () => {
   hamsters.init({
     Worker: Worker,
-    legacy: true
+    legacy: false
   });
   console.log(hamsters.habitat);
   console.log(hamsters.maxThreads);
