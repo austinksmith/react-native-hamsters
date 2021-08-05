@@ -29,7 +29,7 @@ import okio.Okio;
 import okio.Sink;
 
 
-public class RNThreadModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
+public class reactNativeHamstersModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
 
   private String TAG = "ThreadManager";
   private HashMap<Integer, JSThread> threads;
@@ -40,7 +40,7 @@ public class RNThreadModule extends ReactContextBaseJavaModule implements Lifecy
 
   private ReactPackage additionalThreadPackages[];
 
-  public RNThreadModule(final ReactApplicationContext reactContext, ReactNativeHost reactNativehost, ReactPackage additionalThreadPackages[]) {
+  public reactNativeHamstersModule(final ReactApplicationContext reactContext, ReactNativeHost reactNativehost, ReactPackage additionalThreadPackages[]) {
     super(reactContext);
     this.reactApplicationContext = reactContext;
     threads = new HashMap<>();
@@ -56,7 +56,7 @@ public class RNThreadModule extends ReactContextBaseJavaModule implements Lifecy
 
   @ReactMethod
   public void startThread(final String jsFileName, final Promise promise) {
-    Log.d(TAG, "Starting web thread - " + jsFileName);
+    Log.d(TAG, "Starting hamster thread - " + jsFileName);
 
     // When we create the absolute file path later, a "./" will break it.
     // Remove the leading "./" if it exists.
@@ -113,6 +113,7 @@ public class RNThreadModule extends ReactContextBaseJavaModule implements Lifecy
     JSThread thread = threads.get(threadId);
     if (thread == null) {
       Log.d(TAG, "Cannot post message to thread - thread is null for id " + threadId);
+      throw new RuntimeException("Cannot post message to thread - thread is null for id " + threadId, e);
       return;
     }
 
@@ -175,7 +176,7 @@ public class RNThreadModule extends ReactContextBaseJavaModule implements Lifecy
     String[] splitFileSlug = jsFileSlug.split("/");
     String bundleOut = getReactApplicationContext().getFilesDir().getAbsolutePath() + "/" + splitFileSlug[splitFileSlug.length - 1];
 
-    Log.d(TAG, "createDevBundleLoader - download web thread to - " + bundleOut);
+    Log.d(TAG, "createDevBundleLoader - download hamster thread to - " + bundleOut);
     downloadScriptToFileSync(bundleUrl, bundleOut);
 
     return JSBundleLoader.createCachedBundleFromNetworkLoader(bundleUrl, bundleOut);
@@ -215,13 +216,13 @@ public class RNThreadModule extends ReactContextBaseJavaModule implements Lifecy
     try {
       Response response = client.newCall(request).execute();
       if (!response.isSuccessful()) {
-        throw new RuntimeException("Error downloading thread script - " + response.toString());
+        throw new RuntimeException("Error downloading thread script - " + response.toString() " , , this is most likely because you did not run the production deployment commands");
       }
 
       Sink output = Okio.sink(out);
       Okio.buffer(response.body().source()).readAll(output);
     } catch (IOException e) {
-      throw new RuntimeException("Exception downloading thread script to file", e);
+      throw new RuntimeException("Exception downloading thread script to file, this is most likely because you did not run the production deployment commands", e);
     }
   }
 }

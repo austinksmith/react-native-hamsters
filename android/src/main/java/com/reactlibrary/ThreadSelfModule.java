@@ -29,8 +29,9 @@ public class ThreadSelfModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void postMessage(String data) {
-        if (parentContext == null) { return; }
-
+        if (parentContext == null) {
+            throw new RuntimeException("parentContext is missing, can't post message!", e);
+        }
         parentContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit("Thread" + String.valueOf(threadId), data);
     }

@@ -28,43 +28,37 @@ public class JSThread {
         if (reactContext != null) {
             return;
         }
-
         reactContext = reactContextBuilder.build();
-
         ThreadSelfModule threadSelfModule = reactContext.getNativeModule(ThreadSelfModule.class);
         threadSelfModule.initialize(id, context);
     }
 
     public void postMessage(String message) {
         if (reactContext == null) {
-            return;
+            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
         }
-
         reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit("ThreadMessage", message);
     }
 
     public void onHostResume() {
         if (reactContext == null) {
-            return;
+            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
         }
-
         reactContext.onHostResume(null);
     }
 
     public void onHostPause() {
         if (reactContext == null) {
-            return;
+            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
         }
-
         reactContext.onHostPause();
     }
 
     public void terminate() {
         if (reactContext == null) {
-            return;
+            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
         }
-
         reactContext.onHostPause();
         reactContext.destroy();
         reactContext = null;

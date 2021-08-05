@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RNThread", "RNThread\RNThread.csproj", "{2C50AB80-9A8D-11E7-8055-C1E7FD59A1A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reactNativeHamsters", "reactNativeHamsters\reactNativeHamsters.csproj", "{2C50AB80-9A8D-11E7-8055-C1E7FD59A1A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative", "..\node_modules\react-native-windows\ReactWindows\ReactNative\ReactNative.csproj", "{C7673AD5-E3AA-468C-A5FD-FA38154E205C}"
 EndProject

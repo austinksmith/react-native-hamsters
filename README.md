@@ -1,23 +1,23 @@
-# react-native-hamsters
+# reactNativeHamsters
 
-[![npm version](https://img.shields.io/npm/v/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
-[![downloads](https://img.shields.io/npm/dm/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
+[![npm version](https://img.shields.io/npm/v/reactNativeHamsters.svg?style=flat-square)](https://www.npmjs.com/package/reactNativeHamsters)
+[![downloads](https://img.shields.io/npm/dm/reactNativeHamsters.svg?style=flat-square)](https://www.npmjs.com/package/reactNativeHamsters)
 
-This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with [Hamsters.js](https://hamsters.io), allowing you to make full use of the [Hamsters.js](https://hamsters.io) parallel computing library.
+This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with [Hamsters.js](https://hamsters.io), allowing you to make full use of the multithreading and parallel processing in your React Native application.
 
 ## Getting started
 
 `$ npm install hamsters.js --save`
-`$ npm install react-native-hamsters --save`
+`$ npm install reactNativeHamsters --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-hamsters`
+`$ react-native link reactNativeHamsters`
 
 ### Android
 
 For android you will need to make a slight modification to your `MainApplication.java`
-file.  In the `getPackages` method pass in `mReactNativeHost` to the `RNThreadPackage`
+file.  In the `getPackages` method pass in `mReactNativeHost` to the `reactNativeHamstersPackage`
 constructor:
 
 ```java
@@ -25,16 +25,16 @@ constructor:
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-        new RNThreadPackage(mReactNativeHost)  // <-- Here
+        new reactNativeHamstersPackage(mReactNativeHost)  // <-- Here
       );
     }
 ```
 
 Also note that only the official react native modules are available from your
 threads (vibration, fetch, etc...). To include additional native modules in your
-threads, pass them into the `RNThreadPackage` constructor after the `mReactNativeHost`
+threads, pass them into the `reactNativeHamstersPackage` constructor after the `mReactNativeHost`
 like this:
-`new RNThreadPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
+`new reactNativeHamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
 
 ### Manual installation
 
@@ -42,38 +42,38 @@ like this:
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-hamsters` and add `RNThread.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNThread.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+2. Go to `node_modules` ➜ `reactNativeHamsters` and add `reactNativeHamsters.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libreactNativeHamsters.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.reactlibrary.RNThreadPackage;` to the imports at the top of the file
-  - Add `new RNThreadPackage(mReactNativeHost)` to the list returned by the `getPackages()` method
+  - Add `import com.reactlibrary.reactNativeHamstersPackage;` to the imports at the top of the file
+  - Add `new reactNativeHamstersPackage(mReactNativeHost)` to the list returned by the `getPackages()` method
   - Also note that only the official react native modules are available from your
     threads (vibration, fetch, etc...). To include additional native modules in your
-    threads, pass them into the `RNThreadPackage` constructor after the `mReactNativeHost`
+    threads, pass them into the `reactNativeHamstersPackage` constructor after the `mReactNativeHost`
     like this:
-    `new RNThreadPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
+    `new reactNativeHamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
 
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-hamsters'
-  	project(':react-native-hamsters').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-hamsters/android')
+  	include ':reactNativeHamsters'
+  	project(':reactNativeHamsters').projectDir = new File(rootProject.projectDir, '../node_modules/reactNativeHamsters/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-hamsters')
+      compile project(':reactNativeHamsters')
   	```
 
 #### Windows
 Windows support is not yet implemented, [PRs are welcome if you want to give it a shot!(https://github.com/ReactWindows/react-native)
 
-1. In Visual Studio add the `RNThread.sln` in `node_modules/react-native-hamsters/windows/RNThread.sln` folder to their solution, reference from their app.
+1. In Visual Studio add the `reactNativeHamsters.sln` in `node_modules/reactNativeHamsters/windows/reactNativeHamsters.sln` folder to their solution, reference from their app.
 2. Open up your `MainPage.cs` app
-  - Add `using Thread.RNThread;` to the usings at the top of the file
-  - Add `new RNThreadPackage()` to the `List<IReactPackage>` returned by the `Packages` method
+  - Add `using Thread.reactNativeHamsters;` to the usings at the top of the file
+  - Add `new reactNativeHamstersPackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
 ## Usage
@@ -131,7 +131,7 @@ to your project.
 ## Example App
 
 Included in this repository is a simple example application demonstrating basic
-usage of react-native-hamsters with [[Hamsters.js](https://hamsters.io)
+usage of reactNativeHamsters with [Hamsters.js](https://hamsters.io)
 
 ## Acknowledgements
 

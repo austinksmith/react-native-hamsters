@@ -1,11 +1,11 @@
 {
-  "name": "react-native-hamsters",
-  "version": "0.0.19",
+  "name": "reactNativeHamsters",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:austinksmith/react-native-hamsters.git"
+    "url": "git@github.com:austinksmith/reactNativeHamsters.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,10 +16,14 @@
     "workers",
     "parallelism",
     "concurrency",
-    "processing"
+    "processing",
+    "hamstersjs",
+    "serverless",
+    "multicore",
+    "multithreading"
   ],
   "author": "Austin K Smith",
-  "license": "",
+  "license": "Artistic License 2.0",
   "files": [
     "android/",
     "ios/",

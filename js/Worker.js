@@ -13,7 +13,7 @@ export default class Worker {
 
     this.id = ThreadManager.startThread(jsPath.replace(".js", ""))
       .then(id => {
-        DeviceEventEmitter.addListener(`Worker${id}`, (message) => {
+        DeviceEventEmitter.addListener(`Thread${id}`, (message) => {
           !!message && this.onmessage && this.onmessage(message);
         });
         return id;
