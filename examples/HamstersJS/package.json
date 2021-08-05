@@ -13,7 +13,7 @@
     "hamsters.js": "github:austinksmith/hamsters.js#master",
     "react": "17.0.1",
     "react-native": "0.64.2",
-    "reactNativeHamsters": "github:austinksmith/reactNativeHamsters#master"
+    "react-native-hamsters": "github:austinksmith/react-native-hamsters#master"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",

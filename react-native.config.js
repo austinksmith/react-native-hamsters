@@ -2,7 +2,7 @@ module.exports = {
   dependency: {
     platforms: {
       android: {
-        packageInstance: 'new reactNativeHamstersPackage(reactNativeHost)',
+        packageInstance: 'new react-native-hamsterssPackage(reactNativeHost)',
       },
     },
   },
