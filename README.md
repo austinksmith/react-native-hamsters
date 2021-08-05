@@ -105,13 +105,12 @@ a different location, you can update the documented commands accordingly.
 be replicated under `./ios` and `./android/app/src/main/assets/threads`.
 
 ```
-./App/Workers/reactNativeHamster.js => ./ios/App/Workers/reactNativeHamster.jsbundle
-./App/Workers/reactNativeHamster.js => ./android/app/src/main/assets/threads/App/Workers/reactNativeHamster.jsbundle
+ ./node_modules/hamsters.js/build/common/reactNativeHamster.js => ./ios/App/reactNativeHamster.jsbundle
 ```
 
 For iOS you can use the following command:
 
-`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform ios --bundle-output ./ios/reactNativeHamster.jsbundle`
+`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform ios --bundle-output ./ios/App/reactNativeHamster.jsbundle`
 
 Once you have generated the bundle file in your ios folder, you will also need to add
 the bundle file to you project in Xcode. In Xcode's file explorer you should see
@@ -121,9 +120,11 @@ option, which will open up finder and allow you to select your `ios/reactNativeH
 file. You will only need to do this once, and the file will be included in all future
 builds.
 
+For Android first copy reactNativeHamster.js from Hamsters.js /build/common/reactNativeHamster.js into the react native project root.
+
 And then you can use the following command:
 
-`node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform android --bundle-output ./android/app/src/main/assets/reactNativeHamster.jsbundle --assets-dest android/app/src/main/res`
+`react-native bundle --platform android --dev false --entry-file reactNativeHamster.js --bundle-output android/app/src/main/assets/reactNativeHamster.bundle --assets-dest android/app/src/main/res`
 
 For convenience I recommend adding these thread building commands as npm scripts
 to your project.

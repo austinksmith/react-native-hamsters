@@ -57,12 +57,13 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
-  console.log(Worker);
   hamsters.init({
     Worker: Worker,
     legacy: true
   });
   console.log(hamsters.habitat);
+  console.log(hamsters.maxThreads);
+  console.log(hamsters.legacy);
                   var params = {
                     array:[0,1,2,3,4,5,6,7,8,9],
                     threads: 1
