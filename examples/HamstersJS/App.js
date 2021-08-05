@@ -26,7 +26,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Worker} from 'reactNativeHamsters';
+import { Worker} from 'react-native-hamsters';
 
 const hamsters = require('hamsters.js');
 
