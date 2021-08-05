@@ -123,7 +123,7 @@ builds.
 
 And then you can use the following command:
 
-`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./android/app/src/main/res/ --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform android --bundle-output ./android/app/src/main/res/reactNativeHamster.jsbundle`
+`node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform android --bundle-output ./android/app/src/main/assets/reactNativeHamster.jsbundle --assets-dest android/app/src/main/res`
 
 For convenience I recommend adding these thread building commands as npm scripts
 to your project.
