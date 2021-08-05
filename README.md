@@ -78,7 +78,7 @@ Windows support is not yet implemented, [PRs are welcome if you want to give it 
 
 ## Usage
 
-To learn how to make use of the library with [Hamsters.js](https://hamsters.io) head to the ReactNative section of the [[Hamsters.js](https://hamsters.io) Wiki](https://hamsters.io/wiki/react-native) or check out the example Hamstersjs application in the examples directory! For use without [Hamsters.js](https://hamsters.io) check out the project this was based on https://github.com/joltup/react-native-threads, this project may contain modifications or changed that are specific for use with [Hamsters.js](https://hamsters.io).
+To learn how to make use of the library with [Hamsters.js](https://hamsters.io) head to the ReactNative section of the [Hamsters.js Wiki](https://hamsters.io/wiki/react-native) or check out the example Hamstersjs application in the examples directory! For use without [Hamsters.js](https://hamsters.io) check out the project this was based on https://github.com/joltup/react-native-threads, this project may contain modifications or changes that are specific for use with [Hamsters.js](https://hamsters.io).
 
 ### Worker Thread Lifecycle
 
