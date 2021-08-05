@@ -35,7 +35,7 @@ public class JSThread {
 
     public void postMessage(String message) {
         if (reactContext == null) {
-            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
+            throw new RuntimeException( "Cannot continue reactContext is null" + this.id);
         }
         reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit("ThreadMessage", message);
@@ -43,21 +43,21 @@ public class JSThread {
 
     public void onHostResume() {
         if (reactContext == null) {
-            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
+            throw new RuntimeException( "Cannot continue reactContext is null" + this.id);
         }
         reactContext.onHostResume(null);
     }
 
     public void onHostPause() {
         if (reactContext == null) {
-            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
+            throw new RuntimeException( "Cannot continue reactContext is null" + this.id);
         }
         reactContext.onHostPause();
     }
 
     public void terminate() {
         if (reactContext == null) {
-            throw new RuntimeException( "Cannot continue reactContext is null" + threadId, e);
+            throw new RuntimeException( "Cannot continue reactContext is null" + this.id);
         }
         reactContext.onHostPause();
         reactContext.destroy();

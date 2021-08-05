@@ -113,7 +113,7 @@ public class reactNativeHamstersModule extends ReactContextBaseJavaModule implem
     JSThread thread = threads.get(threadId);
     if (thread == null) {
       Log.d(TAG, "Cannot post message to thread - thread is null for id " + threadId);
-      throw new RuntimeException("Cannot post message to thread - thread is null for id " + threadId, e);
+      throw new RuntimeException("Cannot post message to thread - thread is null for id " + threadId);
       return;
     }
 
@@ -216,7 +216,7 @@ public class reactNativeHamstersModule extends ReactContextBaseJavaModule implem
     try {
       Response response = client.newCall(request).execute();
       if (!response.isSuccessful()) {
-        throw new RuntimeException("Error downloading thread script - " + response.toString() " , , this is most likely because you did not run the production deployment commands");
+        throw new RuntimeException("Error downloading thread script - " + response.toString() + " , this is most likely because you did not run the production deployment commands");
       }
 
       Sink output = Okio.sink(out);
