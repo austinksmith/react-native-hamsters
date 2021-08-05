@@ -3,7 +3,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:react-native-hamsterss.xcodeproj">
+      location = "group:react-native-hamsters.xcodeproj">
    </FileRef>
 </Workspace>
   

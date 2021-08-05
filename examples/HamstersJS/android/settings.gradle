@@ -1,5 +1,5 @@
 rootProject.name = 'HamstersJS'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
-include ':react-native-hamsterss'
-project(':react-native-hamsterss').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-hamsterss/android')
+include ':react-native-hamsters'
+project(':react-native-hamsters').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-hamsters/android')

@@ -4,7 +4,7 @@ using ReactNative.UIManager;
 using System;
 using System.Collections.Generic;
 
-namespace Thread.react-native-hamsterss
+namespace Thread.react-native-hamsters
 {
     /// <summary>
     /// Package defining core framework modules (e.g., <see cref="UIManagerModule"/>).
@@ -12,7 +12,7 @@ namespace Thread.react-native-hamsterss
     /// other framework parts (e.g., with the list of packages to load view
     /// managers from).
     /// </summary>
-    public class react-native-hamsterssPackage : IReactPackage
+    public class react-native-hamstersPackage : IReactPackage
     {
         /// <summary>
         /// Creates the list of native modules to register with the react
@@ -24,7 +24,7 @@ namespace Thread.react-native-hamsterss
         {
             return new List<INativeModule>
             {
-                new react-native-hamsterssModule(),
+                new react-native-hamstersModule(),
             };
         }
 

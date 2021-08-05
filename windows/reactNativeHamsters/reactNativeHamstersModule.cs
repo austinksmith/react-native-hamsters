@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
 
-namespace Thread.react-native-hamsterss
+namespace Thread.react-native-hamsters
 {
     /// <summary>
     /// A module that allows JS to share data.
     /// </summary>
-    class react-native-hamsterssModule : NativeModuleBase
+    class react-native-hamstersModule : NativeModuleBase
     {
         /// <summary>
-        /// Instantiates the <see cref="react-native-hamsterssModule"/>.
+        /// Instantiates the <see cref="react-native-hamstersModule"/>.
         /// </summary>
-        internal react-native-hamsterssModule()
+        internal react-native-hamstersModule()
         {
 
         }
@@ -26,7 +26,7 @@ namespace Thread.react-native-hamsterss
         {
             get
             {
-                return "react-native-hamsterss";
+                return "react-native-hamsters";
             }
         }
     }

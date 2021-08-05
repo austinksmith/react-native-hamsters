@@ -35,8 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libreact-native-hamsterss.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libreact-native-hamsterss.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FE51B712377B6CE0043E834 /* libreact-native-hamsterss-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-hamsterss-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		134814201AA4EA6300B7C361 /* libreact-native-hamsters.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libreact-native-hamsters.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE51B712377B6CE0043E834 /* libreact-native-hamsters-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libreact-native-hamsters-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C039B4461F6CF2A4009CB65E /* ThreadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadManager.h; sourceTree = "<group>"; };
 		C039B4471F6CF2A4009CB65E /* ThreadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadManager.m; sourceTree = "<group>"; };
 		C039B4481F6CF2A4009CB65E /* ThreadSelfManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSelfManager.h; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libreact-native-hamsterss.a */,
-				7FE51B712377B6CE0043E834 /* libreact-native-hamsterss-tvOS.a */,
+				134814201AA4EA6300B7C361 /* libreact-native-hamsters.a */,
+				7FE51B712377B6CE0043E834 /* libreact-native-hamsters-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,9 +84,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* react-native-hamsterss */ = {
+		58B511DA1A9E6C8500147676 /* react-native-hamsters */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "react-native-hamsterss" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "react-native-hamsters" */;
 			buildPhases = (
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
@@ -96,14 +96,14 @@
 			);
 			dependencies = (
 			);
-			name = react-native-hamsterss;
+			name = react-native-hamsters;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libreact-native-hamsterss.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libreact-native-hamsters.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		7FE51B682377B6CE0043E834 /* react-native-hamsterss-tvOS */ = {
+		7FE51B682377B6CE0043E834 /* react-native-hamsters-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FE51B6E2377B6CE0043E834 /* Build configuration list for PBXNativeTarget "react-native-hamsterss-tvOS" */;
+			buildConfigurationList = 7FE51B6E2377B6CE0043E834 /* Build configuration list for PBXNativeTarget "react-native-hamsters-tvOS" */;
 			buildPhases = (
 				7FE51B692377B6CE0043E834 /* Sources */,
 				7FE51B6C2377B6CE0043E834 /* Frameworks */,
@@ -113,9 +113,9 @@
 			);
 			dependencies = (
 			);
-			name = "react-native-hamsterss-tvOS";
+			name = "react-native-hamsters-tvOS";
 			productName = RCTDataManager;
-			productReference = 7FE51B712377B6CE0043E834 /* libreact-native-hamsterss-tvOS.a */;
+			productReference = 7FE51B712377B6CE0043E834 /* libreact-native-hamsters-tvOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "react-native-hamsterss" */;
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "react-native-hamsters" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -145,8 +145,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* react-native-hamsterss */,
-				7FE51B682377B6CE0043E834 /* react-native-hamsterss-tvOS */,
+				58B511DA1A9E6C8500147676 /* react-native-hamsters */,
+				7FE51B682377B6CE0043E834 /* react-native-hamsters-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +265,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = react-native-hamsterss;
+				PRODUCT_NAME = react-native-hamsters;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 			};
@@ -282,7 +282,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = react-native-hamsterss;
+				PRODUCT_NAME = react-native-hamsters;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 			};
@@ -325,7 +325,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "react-native-hamsterss" */ = {
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "react-native-hamsters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511ED1A9E6C8500147676 /* Debug */,
@@ -334,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "react-native-hamsterss" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "react-native-hamsters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,
@@ -343,7 +343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FE51B6E2377B6CE0043E834 /* Build configuration list for PBXNativeTarget "react-native-hamsterss-tvOS" */ = {
+		7FE51B6E2377B6CE0043E834 /* Build configuration list for PBXNativeTarget "react-native-hamsters-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FE51B6F2377B6CE0043E834 /* Debug */,

@@ -1,7 +1,7 @@
-# react-native-hamsterss
+# react-native-hamsters
 
-[![npm version](https://img.shields.io/npm/v/react-native-hamsterss.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsterss)
-[![downloads](https://img.shields.io/npm/dm/react-native-hamsterss.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsterss)
+[![npm version](https://img.shields.io/npm/v/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
+[![downloads](https://img.shields.io/npm/dm/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
 
 This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with [Hamsters.js](https://hamsters.io), allowing you to make full use of the multithreading and parallel processing in your React Native application.
 
@@ -17,7 +17,7 @@ This project is based on the work of several previous projects, this is a stand 
 ### Android
 
 For android you will need to make a slight modification to your `MainApplication.java`
-file.  In the `getPackages` method pass in `mReactNativeHost` to the `react-native-hamsterssPackage`
+file.  In the `getPackages` method pass in `mReactNativeHost` to the `react-native-hamstersPackage`
 constructor:
 
 ```java
@@ -25,16 +25,16 @@ constructor:
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-        new react-native-hamsterssPackage(mReactNativeHost)  // <-- Here
+        new react-native-hamstersPackage(mReactNativeHost)  // <-- Here
       );
     }
 ```
 
 Also note that only the official react native modules are available from your
 threads (vibration, fetch, etc...). To include additional native modules in your
-threads, pass them into the `react-native-hamsterssPackage` constructor after the `mReactNativeHost`
+threads, pass them into the `react-native-hamstersPackage` constructor after the `mReactNativeHost`
 like this:
-`new react-native-hamsterssPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
+`new react-native-hamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
 
 ### Manual installation
 
@@ -42,38 +42,38 @@ like this:
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-hamsterss` and add `react-native-hamsterss.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libreact-native-hamsterss.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+2. Go to `node_modules` ➜ `react-native-hamsters` and add `react-native-hamsters.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libreact-native-hamsters.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainApplication.java`
-  - Add `import com.reactlibrary.react-native-hamsterssPackage;` to the imports at the top of the file
-  - Add `new react-native-hamsterssPackage(mReactNativeHost)` to the list returned by the `getPackages()` method
+  - Add `import com.reactlibrary.react-native-hamstersPackage;` to the imports at the top of the file
+  - Add `new react-native-hamstersPackage(mReactNativeHost)` to the list returned by the `getPackages()` method
   - Also note that only the official react native modules are available from your
     threads (vibration, fetch, etc...). To include additional native modules in your
-    threads, pass them into the `react-native-hamsterssPackage` constructor after the `mReactNativeHost`
+    threads, pass them into the `react-native-hamstersPackage` constructor after the `mReactNativeHost`
     like this:
-    `new react-native-hamsterssPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
+    `new react-native-hamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
 
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-hamsterss'
-  	project(':react-native-hamsterss').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-hamsterss/android')
+  	include ':react-native-hamsters'
+  	project(':react-native-hamsters').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-hamsters/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-hamsterss')
+      compile project(':react-native-hamsters')
   	```
 
 #### Windows
 Windows support is not yet implemented, [PRs are welcome if you want to give it a shot!(https://github.com/ReactWindows/react-native)
 
-1. In Visual Studio add the `react-native-hamsterss.sln` in `node_modules/react-native-hamsterss/windows/react-native-hamsterss.sln` folder to their solution, reference from their app.
+1. In Visual Studio add the `react-native-hamsters.sln` in `node_modules/react-native-hamsters/windows/react-native-hamsters.sln` folder to their solution, reference from their app.
 2. Open up your `MainPage.cs` app
-  - Add `using Thread.react-native-hamsterss;` to the usings at the top of the file
-  - Add `new react-native-hamsterssPackage()` to the `List<IReactPackage>` returned by the `Packages` method
+  - Add `using Thread.react-native-hamsters;` to the usings at the top of the file
+  - Add `new react-native-hamstersPackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
 ## Usage
