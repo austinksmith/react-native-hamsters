@@ -26,6 +26,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+
+
 import { Worker} from 'react-native-hamsters';
 
 const hamsters = require('hamsters.js');
@@ -59,17 +62,16 @@ const Section = ({children, title}): Node => {
 const App: () => Node = () => {
   hamsters.init({
     Worker: Worker,
-    legacy: false
+    legacy: false,
+    persistence: true
   });
-  console.log(hamsters.habitat);
-  console.log(hamsters.maxThreads);
-  console.log(hamsters.legacy);
-                  var params = {
+                  let params = {
                     array:[0,1,2,3,4,5,6,7,8,9],
-                    threads: 1
+                    threads: 4,
+                    aggregate: true
                   };
                   hamsters.run(params, function() {
-                    var arr = params.array;
+                    let arr = params.array;
                     arr.forEach(function(item) {
                      rtn.data.push((item * 120)/10);
                     });

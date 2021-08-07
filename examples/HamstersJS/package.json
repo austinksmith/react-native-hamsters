@@ -10,9 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.5",
     "hamsters.js": "github:austinksmith/hamsters.js#master",
     "react": "17.0.1",
-    "react-native": "0.64.2",
+    "react-native": "0.62.0",
+    "react-native-async-storage": "0.0.1",
     "react-native-hamsters": "github:austinksmith/react-native-hamsters#master"
   },
   "devDependencies": {
@@ -23,7 +25,8 @@
     "eslint": "^7.32.0",
     "jest": "^27.0.6",
     "metro-react-native-babel-preset": "^0.66.2",
-    "react-test-renderer": "17.0.1"
+    "react-test-renderer": "17.0.1",
+    "reactotron-react-native": "^5.0.0"
   },
   "jest": {
     "preset": "react-native"
