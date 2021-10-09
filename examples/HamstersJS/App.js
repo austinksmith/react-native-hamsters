@@ -66,17 +66,17 @@ const App: () => Node = () => {
     persistence: true
   });
                   let params = {
-                    array:[0,1,2,3,4,5,6,7,8,9],
+                    array: Array(5*1000*1000 - 1 + 1).fill().map((_, idx) => 1 + idx),
                     threads: 4,
                     aggregate: true
                   };
                   hamsters.run(params, function() {
                     let arr = params.array;
                     arr.forEach(function(item) {
-                     rtn.data.push((item * 120)/10);
+                     rtn.data.push((item * 120)/10 * 1000 * 1200);
                     });
                   }, function(results) {
-                    console.log(results);
+                    console.log(results.length);
                   });
   const isDarkMode = useColorScheme() === 'dark';
 

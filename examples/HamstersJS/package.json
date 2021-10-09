@@ -13,7 +13,7 @@
     "@react-native-async-storage/async-storage": "^1.15.5",
     "hamsters.js": "github:austinksmith/hamsters.js#master",
     "react": "17.0.1",
-    "react-native": "0.62.0",
+    "react-native": "0.64.2",
     "react-native-async-storage": "0.0.1",
     "react-native-hamsters": "github:austinksmith/react-native-hamsters#master"
   },
