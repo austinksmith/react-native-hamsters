@@ -14,6 +14,12 @@ This project is based on the work of several previous projects, this is a stand 
 
 `$ react-native link react-native-hamsters`
 
+### Thread Life Cycle
+
+- Worker Threads are paused when the app enters in the background
+- Worker Threads are resumed once the app is running in the foreground
+- During development, when you reload the main JS bundle (shake device -> `Reload`) the Worker Threads are killed
+
 ### Android
 
 For android you will need to make a slight modification to your `MainApplication.java`
@@ -80,13 +86,7 @@ Windows support is not yet implemented, [PRs are welcome if you want to give it 
 
 ## Usage
 
-To get started head to the ReactNative section of the [Hamsters.js Wiki](https://www.hamsters.io/wiki/react-native) 
-
-### Worker Thread Lifecycle
-
-- Worker Threads are paused when the app enters in the background
-- Worker Threads are resumed once the app is running in the foreground
-- During development, when you reload the main JS bundle (shake device -> `Reload`) the Worker Threads are killed
+To get started head to the ReactNative section of the [Hamsters.js Wiki](https://www.hamsters.io/wiki/react-native)
 
 ### Debugging
 
