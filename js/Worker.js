@@ -23,9 +23,7 @@ export default class Worker {
       throw new Error('Invalid path for thread. Only js files are supported');
     }
     this.id = ThreadManager.startThread(jsPath.replace(".js", "")).then(id => {
-      DeviceEventEmitter.addListener(`Thread${id}`, (message) => {
-        !!message && this.onmessage && this.onmessage(message);
-      });
+      DeviceEventEmitter.addListener(`Thread${id}`, (message) => this.onmessage(message));
       return id;
     }).catch(err => {
       throw new Error(err);

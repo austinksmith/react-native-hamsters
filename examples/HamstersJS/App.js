@@ -60,24 +60,25 @@ const Section = ({children, title}): Node => {
 };
 
 const App: () => Node = () => {
+  console.log("Hamsters.js Initializing Self Test!");
   hamsters.init({
     Worker: Worker,
-    legacy: false,
-    persistence: false
+    debug: true
   });
-                  let params = {
-                    array: Array(5*1000*1000 - 1 + 1).fill().map((_, idx) => 1 + idx),
-                    threads: 4,
-                    aggregate: true
-                  };
-                  hamsters.run(params, function() {
-                    let arr = params.array;
-                    arr.forEach(function(item) {
-                     rtn.data.push((item * 120)/10 * 1000 * 1200);
-                    });
-                  }, function(results) {
-                    console.log(results.length);
-                  });
+  let params = {
+    array: Array(10 - 1 + 1).fill().map((_, idx) => 1 + idx),
+    threads: 2,
+    aggregate: true
+  };
+  console.log("Hamsters.js Self Test Using 2 Threads!");
+  hamsters.run(params, function() {
+    let arr = params.array;
+    arr.forEach(function(item) {
+     rtn.data.push((item * 120)/10 * 1000 * 1200);
+    });
+  }, function(results) {
+    console.log("Hamsters.js Self Test Success!", results);
+  });
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
