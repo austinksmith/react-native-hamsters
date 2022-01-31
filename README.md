@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
 [![downloads](https://img.shields.io/npm/dm/react-native-hamsters.svg?style=flat-square)](https://www.npmjs.com/package/react-native-hamsters)
 
-This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with [Hamsters.js](https://hamsters.io), allowing you to make full use of the multithreading and parallel processing in your React Native application.
+This project is based on the work of several previous projects, this is a stand alone worker threads implementation for use within ReactNative and with [Hamsters.js](https://www.hamsters.io), allowing you to make full use of the multithreading and parallel processing in your React Native application.
 
 ## Getting started
 
@@ -78,7 +78,7 @@ Windows support is not yet implemented, [PRs are welcome if you want to give it 
 
 ## Usage
 
-To get started head to the ReactNative section of the [Hamsters.js Wiki](https://hamsters.io/wiki/react-native) 
+To get started head to the ReactNative section of the [Hamsters.js Wiki](https://www.hamsters.io/wiki/react-native) 
 
 ### Worker Thread Lifecycle
 
@@ -137,7 +137,7 @@ to your project.
 ## Example App
 
 Included in this repository is a simple example application demonstrating basic
-usage of react-native-hamsters with [Hamsters.js](https://hamsters.io)
+usage of react-native-hamsters with [Hamsters.js](https://www.hamsters.io)
 
 ## Acknowledgements
 
@@ -147,4 +147,8 @@ This library exists thanks to the previous effforts by other developers.
 * https://github.com/fabriciovergal/react-native-workers
 * https://github.com/devfd/react-native-workers
 
-Neither of these were being maintained by their original owners and I wanted [Hamsters.js](https://hamsters.io) to work properly in react-native again so here it is.
+Neither of these were being maintained by their original owners and I wanted [Hamsters.js](https://www.hamsters.io) to work properly in react-native again so here it is.
+
+# Support Hamsters.js
+
+Hamsters.js is a self funded project, in order to provide updates and host the project website I rely on donations. Unfortunately over the years donations have been lacking, please consider donating today so I can continue to support this project, thank you. Multiple donation types are accepted including OpenCollective, PayPal, and various crypto currencies on the [Hamsters.js donation page](https://www.hamsters.io/donate)

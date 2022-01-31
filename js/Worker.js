@@ -1,3 +1,15 @@
+/* jshint esversion: 6, curly: true, eqeqeq: true, forin: true */
+
+/***********************************************************************************
+* Title: react-native-hamsters                                                     *
+* Description: Stand alone worker threads implementation for ReactNative           *
+  "main": "index.js", *
+* Author: Austin K. Smith                                                          *
+* Contact: austin@asmithdev.com                                                    *  
+* Copyright: 2015 Austin K. Smith - austin@asmithdev.com                           * 
+* License: Artistic License 2.0                                                    *
+***********************************************************************************/
+
 import {
   NativeModules,
   DeviceEventEmitter,
@@ -10,15 +22,14 @@ export default class Worker {
     if (!jsPath || !jsPath.endsWith('.js')) {
       throw new Error('Invalid path for thread. Only js files are supported');
     }
-
-    this.id = ThreadManager.startThread(jsPath.replace(".js", ""))
-      .then(id => {
-        DeviceEventEmitter.addListener(`Thread${id}`, (message) => {
-          !!message && this.onmessage && this.onmessage(message);
-        });
-        return id;
-      })
-      .catch(err => { throw new Error(err) });
+    this.id = ThreadManager.startThread(jsPath.replace(".js", "")).then(id => {
+                DeviceEventEmitter.addListener(`Thread${id}`, (message) => {
+                  return ((!message || !this.onmessage) ? false : this.onmessage(message));
+                });
+                return id;
+              }).catch(err => {
+                throw new Error(err);
+              });
   }
 
   postMessage(message) {
