@@ -63,7 +63,7 @@ const App: () => Node = () => {
   hamsters.init({
     Worker: Worker,
     legacy: false,
-    persistence: true
+    persistence: false
   });
                   let params = {
                     array: Array(5*1000*1000 - 1 + 1).fill().map((_, idx) => 1 + idx),
