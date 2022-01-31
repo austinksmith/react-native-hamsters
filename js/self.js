@@ -21,12 +21,12 @@ const self = {
   onmessage: null,
 
   postMessage: (message) => {
-    return (!message ? false : ThreadSelfManager.postMessage(message));
+    return ThreadSelfManager.postMessage(message);
   }
 };
 
 DeviceEventEmitter.addListener('ThreadMessage', (message) => {
-  return ((!message || !self.onmessage) ? false : self.onmessage(message));
+  return self.onmessage(message);
 });
 
 export default self;

@@ -58,12 +58,14 @@ like this:
     `new reactNativeHamstersPackage(mReactNativeHost, new ExampleNativePackage(), new SQLitePackage())`
 
 2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-hamsters'
-  	project(':react-native-hamsters').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-hamsters/android')
+
+  	```java
+  	 include ':react-native-hamsters'
+  	 project(':react-native-hamsters').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-hamsters/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
+
+  	```java
       compile project(':react-native-hamsters')
   	```
 
@@ -104,13 +106,16 @@ a different location, you can update the documented commands accordingly.
 **Note**: If your single thread file is in a different location, the folder structure needs to 
 be replicated under `./ios` and `./android/app/src/main/assets/threads`.
 
-```
+```shell
  ./node_modules/hamsters.js/build/common/reactNativeHamster.js => ./ios/App/reactNativeHamster.bundle
 ```
 
+### iOS
 For iOS you can use the following command:
 
-`node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform ios --bundle-output ./ios/App/reactNativeHamster.bundle`
+```shell
+  node node_modules/react-native/local-cli/cli.js bundle --dev false --assets-dest ./ios --entry-file ./node_modules/hamsters.js/build/common/reactNativeHamster.js --platform ios --bundle-output ./ios/App/reactNativeHamster.bundle
+```
 
 Once you have generated the bundle file in your ios folder, you will also need to add
 the bundle file to you project in Xcode. In Xcode's file explorer you should see
@@ -120,16 +125,21 @@ option, which will open up finder and allow you to select your `ios/reactNativeH
 file. You will only need to do this once, and the file will be included in all future
 builds.
 
+
+## Android
+
 For Android first copy reactNativeHamster.js from Hamsters.js /build/common/reactNativeHamster.js into the react native project root.
 
 And then you can use the following command:
 
-`
-rm -rf /tmp/metro-*
-`
+```shell
+  rm -rf /tmp/metro-*
+```
 
 
-`react-native bundle --platform android --dev false --entry-file reactNativeHamster.js --bundle-output android/app/src/main/assets/reactNativeHamster.bundle --assets-dest android/app/src/main/res`
+```shell
+  react-native bundle --platform android --dev false --entry-file reactNativeHamster.js --bundle-output android/app/src/main/assets/reactNativeHamster.bundle --assets-dest android/app/src/main/res
+```
 
 For convenience I recommend adding these thread building commands as npm scripts
 to your project.
