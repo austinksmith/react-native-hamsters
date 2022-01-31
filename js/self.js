@@ -19,14 +19,11 @@ const { ThreadSelfManager } = NativeModules;
 
 const self = {
   onmessage: null,
-
-  postMessage: (message) => {
-    return ThreadSelfManager.postMessage(message);
-  }
+  postMessage: ThreadSelfManager.postMessage;
 };
 
 DeviceEventEmitter.addListener('ThreadMessage', (message) => {
-  return self.onmessage(message);
+  !!message && self.onmessage && self.onmessage(message);
 });
 
 export default self;
