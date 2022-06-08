@@ -149,16 +149,6 @@ to your project.
 Included in this repository is a simple example application demonstrating basic
 usage of react-native-hamsters with [Hamsters.js](https://www.hamsters.io)
 
-## Acknowledgements
-
-This library exists thanks to the previous effforts by other developers.
-
-* https://github.com/joltup/react-native-threads
-* https://github.com/fabriciovergal/react-native-workers
-* https://github.com/devfd/react-native-workers
-
-Neither of these were being maintained by their original owners and I wanted [Hamsters.js](https://www.hamsters.io) to work properly in react-native again so here it is.
-
 # Support Hamsters.js
 
 Hamsters.js is a self funded project, in order to provide updates and host the project website I rely on donations. Unfortunately over the years donations have been lacking, please consider donating today so I can continue to support this project, thank you. Multiple donation types are accepted including OpenCollective, PayPal, and various crypto currencies on the [Hamsters.js donation page](https://www.hamsters.io/donate)
