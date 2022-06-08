@@ -2,9 +2,9 @@
   "name": "react-native-hamsters",
   "author": "Austin K Smith",
   "license": "Artistic License 2.0",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "homepage": "https://www.hamsters.io/",
-  "description": "This is a stand alone worker threads implementation for use within ReactNative and with Hamsters.js, allowing you to make full use of the multithreading and parallel processing in your React Native application.",
+  "description": "Worker threads implementation for use within ReactNative & Hamsters.js, allowing you to make use of the multithreading and parallel processing in your ReactNative application.",
   "main": "index.js",
   "repository": {
     "type": "git",
