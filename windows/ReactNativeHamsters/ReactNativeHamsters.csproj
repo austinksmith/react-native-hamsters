@@ -129,8 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reactNativeHamstersModule.cs" />
-    <Compile Include="reactNativeHamstersPackage.cs" />
+    <Compile Include="ReactNativeHamstersModule.cs" />
+    <Compile Include="ReactNativeHamstersPackage.cs" />
     <EmbeddedResource Include="Properties\react-native-hamsters.rd.xml" />
   </ItemGroup>
   <ItemGroup>
