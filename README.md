@@ -7,12 +7,8 @@ This project is based on the work of several previous projects, this is a stand 
 
 ## Getting started
 
-`$ npm install hamsters.js --save`
-`$ npm install react-native-hamsters --save`
-
-### Mostly automatic installation
-
-`$ react-native link react-native-hamsters`
+`npm install hamsters.js --save`
+`npm install react-native-hamsters --save`
 
 ### Thread Life Cycle
 
@@ -151,4 +147,4 @@ usage of react-native-hamsters with [Hamsters.js](https://www.hamsters.io)
 
 # Support Hamsters.js
 
-Hamsters.js is a self funded project, in order to provide updates and host the project website I rely on donations. Unfortunately over the years donations have been lacking, please consider donating today so I can continue to support this project, thank you. Multiple donation types are accepted including OpenCollective, PayPal, and various crypto currencies on the [Hamsters.js donation page](https://www.hamsters.io/donate)
+Hamsters.js is a self funded project, in order to provide updates and host the project website I rely on donations. Please consider donating today so I can continue to support this project, thank you. [Hamsters.js donation page](https://www.hamsters.io/donate)
